@@ -7,7 +7,6 @@ class AssetsController < ApplicationController
   end
 
   def create
-    binding.pry
     @asset = Asset.new(asset_type: params[:asset_type],
                        name: params[:name],
                        asset_url: params[:asset_url])
