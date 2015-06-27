@@ -3,7 +3,7 @@ class AccessoriesController < ApplicationController
 
   def index
     @accessory = Accessory.all
-    render json: { accessories: @accessory.as_json(only: [:id, :accessory_type, :name, :accessory_url])}
+    render json: { accessories: @accessory.as_json }
   end
 
   def create
