@@ -13,7 +13,7 @@ class AssetsController < ApplicationController
                        asset_url: params[:asset_url])
 
   if @asset.save
-    render json: { asset: @asset.as_json(only: [:id, :asset_type
+    render json: { asset: @asset.as_json(only: [:id, :asset_type,
                                                 :name, :asset_url]) },
     status: :created
   else
