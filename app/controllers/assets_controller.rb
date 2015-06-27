@@ -12,13 +12,14 @@ class AssetsController < ApplicationController
                        name: params[:name],
                        asset_url: params[:asset_url])
 
-  if @asset.save
-    render json: { asset: @asset.as_json(only: [:id, :asset_type,
-                                                :name, :asset_url]) },
-    status: :created
-  else
-    render json: { errors: @asset.errors.full_message },
-    status: :unprocessable_entity
+    if @asset.save
+      render json: { asset: @asset.as_json(only: [:id, :asset_type,
+                                                  :name, :asset_url]) },
+      status: :created
+    else
+      render json: { errors: @asset.errors.full_message },
+      status: :unprocessable_entity
+    end
   end
 end
 
