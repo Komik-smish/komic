@@ -2,8 +2,9 @@ class AccessoriesController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
-    @accessory = Accessory.all
-    render json: { accessories: @accessory.as_json }
+    @accessories = Accessory.all
+    render "index.json.jbuilder"
+    # render json: { accessories: @accessory.as_json }
   end
 
   def create
