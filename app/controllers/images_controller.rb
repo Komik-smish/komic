@@ -28,7 +28,7 @@ skip_before_action :verify_authenticity_token
     end
   end
 
-  def delete
+  def destroy
     @image = Image.find_by(id: params[:id])
 
     if @image
