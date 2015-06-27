@@ -2,9 +2,10 @@ Rails.application.routes.draw do
 
   root to: 'images#index'
 
-  resources :images 
+  resources :images
 
   get 'assets', to: 'assets#index'
+  post 'assets', to: 'assets#create', as: 'create_assets'
 
 
 
