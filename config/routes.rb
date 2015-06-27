@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root to: 'images#index'
 
-  get '/jd', to: "accessories#index"
+  get '/jd', to: "accessories#jd"
 
   resources :images
   resources :accessories
