@@ -1,9 +1,12 @@
 class AccessoriesController < ApplicationController
   skip_before_action :verify_authenticity_token
 
-  def index
-    @accessory = Accessory.all
-    render json: { accessories: @accessory.as_json(only: [:id, :accessory_type, :name, :accessory_url])}
+  def jd
+    @accessories = Accessory.all
+    # render "index.json.jbuilder"
+    # render json: { accessories: @accessory.as_json }
+    render json: @accessories
+    # render json: { foo: "bar" }
   end
 
   def create
