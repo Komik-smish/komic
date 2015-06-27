@@ -1,4 +1,6 @@
 class ImagesController < ApplicationController
+skip_before_action :verify_authenticity_token
+
   def index
     @images = Image.all
     render json: @images.as_json
@@ -10,7 +12,7 @@ class ImagesController < ApplicationController
     if @image.save
       render json: { image: @image.as_json }
     else
-      render json { errors: image.errors.full_message },
+      render json: { errors: @image.errors.full_message },
       status: :not_found
     end
   end
