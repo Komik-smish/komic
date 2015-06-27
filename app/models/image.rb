@@ -1,4 +1,4 @@
 class Image < ActiveRecord::Base
-  has_many :assets
+  has_many :accessories
 
 end
