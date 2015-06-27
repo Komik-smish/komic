@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'assets', to: 'assets#index'
   post 'assets', to: 'assets#create', as: 'create_assets'
 
+  delete 'assets', to: 'assets#destroy'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
