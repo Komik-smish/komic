@@ -3,7 +3,7 @@ class AccessoriesController < ApplicationController
 
   def index
     @accessory = Accessory.all
-    render json: { accessories: @accessory.as_json(only: [:accessory_type, :name, :accessory_url])}
+    render json: { accessories: @accessory.as_json(only: [:id, :accessory_type, :name, :accessory_url])}
   end
 
   def create
@@ -12,8 +12,7 @@ class AccessoriesController < ApplicationController
                        accessory_url: params[:accessory_url])
 
     if @accessory.save
-      render json: { accessory: @accessory.as_json(only: [:id, :accessory_type,
-                                                  :name, :accessory_url]) },
+      render json: { accessory: @accessory.as_json },
       status: :created
     else
       render json: { errors: @accessory.errors.full_message },
