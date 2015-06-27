@@ -5,7 +5,8 @@ class AccessoriesController < ApplicationController
     @accessories = Accessory.all
     # render "index.json.jbuilder"
     # render json: { accessories: @accessory.as_json }
-    render json: @accessories
+    # render json: @accessories
+    render json: { foo: "bar" }
   end
 
   def create
