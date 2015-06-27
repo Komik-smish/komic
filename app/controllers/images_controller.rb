@@ -3,7 +3,8 @@ skip_before_action :verify_authenticity_token
 
   def index
     @images = Image.all
-    render json: @images.as_json
+    # render json: @images.as_json
+    render json: { foo: "bar" }
   end
 
   def show
