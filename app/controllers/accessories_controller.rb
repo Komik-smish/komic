@@ -3,8 +3,9 @@ class AccessoriesController < ApplicationController
 
   def index
     @accessories = Accessory.all
-    render "index.json.jbuilder"
+    # render "index.json.jbuilder"
     # render json: { accessories: @accessory.as_json }
+    render json: @accessories
   end
 
   def create
