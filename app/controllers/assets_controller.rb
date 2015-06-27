@@ -20,6 +20,25 @@ class AssetsController < ApplicationController
       status: :unprocessable_entity
     end
   end
+
+  def destroy
+
+
+    @asset = Asset.find_by(id: params[:id])
+   # binding.pry
+    if @asset
+      @asset.destroy
+      render json: { message: "Asset Deleted." }
+    else
+      render json: { message: "Asset not found." },
+      status: :unprocessable_entity
+    end
+  end
+
+
+
+
+
 end
 
 
