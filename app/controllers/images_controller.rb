@@ -40,4 +40,16 @@ skip_before_action :verify_authenticity_token
       status: :unprocessable_entity
     end
   end
+
+  def create_strip
+    @strip = Strip.find(params[:strip_id])
+    @image = Image.find(params[:image_id])
+    if @image
+      @image.update(strip_id: @strip.id)
+      render json: @image
+    else
+      render json: { message: "Image not found." },
+      status: :unprocessable_entity
+    end
+  end
 end
