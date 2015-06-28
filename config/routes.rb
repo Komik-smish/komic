@@ -10,7 +10,14 @@ Rails.application.routes.draw do
 
   resources :images
   resources :accessories
-  resources :users, only: [:create, :destroy]
+
+  get 'user/:id', to: 'users#show'
+  post 'users/signup', to: 'users#create'
+  post 'users/login', to: 'users#login'
+  get 'users', to: 'users#index'
+
+
+  delete 'users/:id', to: 'users#destroy'
   # get 'assets', to: 'assets#index'
   # post 'assets', to: 'assets#create', as: 'create_assets'
 

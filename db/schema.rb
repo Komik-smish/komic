@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20150628014041) do
     t.string   "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "user_id"
     t.integer  "strip_id"
     t.integer  "ios"
     t.string   "user_id"
