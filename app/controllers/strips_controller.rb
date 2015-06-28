@@ -8,7 +8,7 @@ class StripsController < ApplicationController
     @strip = Strip.find(params[:id])
 
     if @strip.save
-      render json: { image: @strip.as_json }
+      render json: { strip: @strip.as_json, image: @strip.images.all.as_json }
     else
       render json: { errors: @strip.errors.full_message },
       status: :not_found
