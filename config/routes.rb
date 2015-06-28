@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   post '/strip/:name/:image_id', to: 'strips#create_strip'
 
+  get '/images/edits', to: 'images#ios_images'
+
   resources :images
   resources :accessories
 

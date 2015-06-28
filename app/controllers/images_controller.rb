@@ -18,6 +18,17 @@ skip_before_action :verify_authenticity_token
     end
   end
 
+  def ios_images
+    @images = Image.where(ios: 1)
+
+    if @images
+      render json: { image: @image.as_json }
+    else
+      render json: { errors: @images.errors.full_message },
+      status: :not_found
+    end
+  end
+
   def create
     @image = Image.new(image_url: params[:image_url], ios: params[:ios])
 
