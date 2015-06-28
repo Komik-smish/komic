@@ -19,7 +19,7 @@ skip_before_action :verify_authenticity_token
   end
 
   def ios_images
-    @images = Image.where(ios: 1)
+    @images = Image.where(ios: 1).limit(5).order(created_at: :desc)
 
     if @images
       render json: { image: @images.as_json }
