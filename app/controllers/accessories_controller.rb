@@ -35,10 +35,5 @@ class AccessoriesController < ApplicationController
       status: :unprocessable_entity
     end
   end
-
-
-
-
-
 end
 
