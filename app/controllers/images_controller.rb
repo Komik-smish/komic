@@ -22,7 +22,7 @@ skip_before_action :verify_authenticity_token
     @images = Image.where(ios: 1)
 
     if @images
-      render json: { image: @image.as_json }
+      render json: { image: @images.as_json }
     else
       render json: { errors: @images.errors.full_message },
       status: :not_found
