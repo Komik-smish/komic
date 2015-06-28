@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   get '/accessories', to: "accessories#jd"
 
+  get '/strip/:id', to: 'strips#show'
+
   post '/strip/:strip_id/image/:image_id', to: 'strips#create_strip'
 
   resources :images
