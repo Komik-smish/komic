@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   resources :images
   resources :accessories
+  resources :users, only: [:create, :destroy]
   # get 'assets', to: 'assets#index'
   # post 'assets', to: 'assets#create', as: 'create_assets'
 
