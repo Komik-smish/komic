@@ -27,7 +27,6 @@ class AccessoriesController < ApplicationController
 
 
     @accessory = Accessory.find_by(id: params[:id])
-   # binding.pry
     if @accessory
       @accessory.destroy
       render json: { message: "accessory Deleted." }
@@ -38,6 +37,3 @@ class AccessoriesController < ApplicationController
   end
 end
 
-
-#lightsaber http://imgur.com/TUpjMDX
-#gun http://imgur.com/sEqgdqe
