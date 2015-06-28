@@ -27,7 +27,7 @@ class StripsController < ApplicationController
   end
 
   def create_strip
-    @strip = Strip.find(params[:strip_id])
+    @strip = Strip.find_or_create_by(params[:name])
     @image = Image.find(params[:image_id])
     if @image
       @image.update(strip_id: @strip.id)

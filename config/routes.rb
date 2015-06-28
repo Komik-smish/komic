@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   get '/strip/:id', to: 'strips#show'
 
-  post '/strip/:strip_id/image/:image_id', to: 'strips#create_strip'
+  post '/strip/:name/:image_id', to: 'strips#create_strip'
 
   resources :images
   resources :accessories
