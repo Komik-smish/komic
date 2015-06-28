@@ -19,7 +19,7 @@ skip_before_action :verify_authenticity_token
   end
 
   def create
-    @image = Image.new(image_url: params[:image_url])
+    @image = Image.new(image_url: params[:image_url], ios: params[:ios])
 
     if @image.save
       render json: { image: @image.as_json }
